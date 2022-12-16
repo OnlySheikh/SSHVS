@@ -2,7 +2,7 @@ import os
 import socket
 
 print("Welcome to Easy SSHVS(SSH VPN Server) v1.0 | Only Sheikh")
-sshPORT = input("Choose a new SSH Port(number)")
+sshPORT = input("Choose a new SSH Port(number): ")
 
 with open('/etc/ssh/sshd_config') as f:
     lines = f.read()
@@ -10,7 +10,7 @@ with open('/etc/ssh/sshd_config') as f:
 lines = lines.replace('#AllowAgentForwarding yes','AllowAgentForwarding yes')
 lines = lines.replace('#AllowTcpForwarding yes','AllowTcpForwarding yes')
 lines = lines.replace('#TCPKeepAlive yes','TCPKeepAlive yes')
-lines = lines.replace('#Port 22','Port '+sshPORT)
+lines = lines.replace('#Port 22','Port '+str(sshPORT))
 
 saveSSHD = open("/etc/ssh/sshd_config","w")
 saveSSHD.write(lines)
