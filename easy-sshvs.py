@@ -11,6 +11,7 @@ lines = lines.replace('#AllowAgentForwarding yes','AllowAgentForwarding yes')
 lines = lines.replace('#AllowTcpForwarding yes','AllowTcpForwarding yes')
 lines = lines.replace('#TCPKeepAlive yes','TCPKeepAlive yes')
 lines = lines.replace("#Port 22","Port "+str(sshPORT))
+lines = lines.replace("Port 22","Port "+str(sshPORT))
 
 saveSSHD = open("/etc/ssh/sshd_config","w")
 saveSSHD.write(lines)
