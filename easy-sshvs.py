@@ -59,5 +59,7 @@ while True:
             clear = "clear"
             os.system(clear)
             delUsername = input("Enter a username for delete(text): ")
+            killall = "killall -TERM -u " + delUsername
+            os.system(killall)
             delUSER = "userdel -r " + delUsername
             os.system(delUSER)
